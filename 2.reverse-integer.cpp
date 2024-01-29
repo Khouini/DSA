@@ -12,6 +12,15 @@ class Solution1
 public:
     int reverse(int x)
     {
+        cout << INT_MIN << endl;
+        if ((x >= INT_MAX || x <= INT_MIN))
+        {
+            return 0;
+        }
+        if (x == 0)
+        {
+            return 0;
+        }
         bool isNegative = false;
         if (x < 0)
         {
@@ -24,7 +33,14 @@ public:
             rs = rs + to_string(x % 10);
             x = x / 10;
         }
-        return isNegative ? -(stoi(rs)) : stoi(rs);
+        try
+        {
+            return isNegative ? -(std::stoi(rs)) : std::stoi(rs);
+        }
+        catch (const std::out_of_range &e)
+        {
+            return 0;
+        }
     }
 };
 
@@ -50,6 +66,6 @@ public:
 int main()
 {
     Solution1 sol;
-    cout << sol.reverse(-1234) << endl;
+    cout << sol.reverse(-2147483648) << endl;
     return 0;
 }
