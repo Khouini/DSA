@@ -1,0 +1,34 @@
+Stack: LIFO
+it has 3 methods: push, pop, top
+complexity time is constant: o(1)
+
+Queue: FIFO: Buying ticket
+back & front : prints
+pop: delete first in
+
+
+priority_queue<int>: like TreeMap in java (max heap)
+push, top, pop,
+
+priority_queue<int, vector <int>, greater<int>> pq;
+it's reverse sorting (min heap)
+push & pop : o(log(n))
+top: o(1)
+
+
+Set : Sorted & unique
+auto it = set.find(value)
+st.earase(value)
+everything in log(n)
+
+
+MultiSet: Sorted but not unique
+earase(val) => deletes all elements with that value
+count(val)
+auto address = find(val)
+earase(address) => delete only the element in that address
+
+
+
+unordered Set: unique but not sorted
+o(1) and sometime o(n)
