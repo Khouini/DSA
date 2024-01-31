@@ -65,7 +65,7 @@ public:
 
 int main()
 {
-    Solution1 sol;
-    cout << sol.reverse(-2147483648) << endl;
+    Solution2 sol;
+    cout << sol.reverse(1234) << endl;
     return 0;
 }

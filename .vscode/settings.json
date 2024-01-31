@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "*.ejs": "html",
-        "stdexcept": "cpp"
+        "stdexcept": "cpp",
+        "chrono": "cpp",
+        "functional": "cpp"
     }
 }
