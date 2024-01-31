@@ -3,6 +3,8 @@
         "*.ejs": "html",
         "stdexcept": "cpp",
         "chrono": "cpp",
-        "functional": "cpp"
+        "functional": "cpp",
+        "cmath": "cpp",
+        "ostream": "cpp"
     }
 }
