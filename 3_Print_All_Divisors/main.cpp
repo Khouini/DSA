@@ -18,8 +18,8 @@ std::pmr::vector<int> getAllDivisors(int n) {
 
 int main() {
     const std::pmr::vector<int> result = getAllDivisors(36);
-    for (int i = 0 ; i < result.size();i++) {
-        std::cout << result[i] << std::endl;
+    for (const auto it : result) {
+        std::cout << it << std::endl;
     }
     return 0;
 }
