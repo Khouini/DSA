@@ -12,6 +12,7 @@ std::pmr::vector<int> getAllDivisors(int n) {
         }
     }
 
+    std::sort(divisors.begin(), divisors.end()); // O(n log(n))
     return divisors;
 }
 
