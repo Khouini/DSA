@@ -1,0 +1,3 @@
+C:/Users/khoui/CLionProjects/DSA/3_Print_All_Divisors/cmake-build-debug/CMakeFiles/3_Print_All_Divisors.dir
+C:/Users/khoui/CLionProjects/DSA/3_Print_All_Divisors/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/khoui/CLionProjects/DSA/3_Print_All_Divisors/cmake-build-debug/CMakeFiles/rebuild_cache.dir
