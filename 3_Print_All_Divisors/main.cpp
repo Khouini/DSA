@@ -17,7 +17,7 @@ std::pmr::vector<int> getAllDivisors(int n) {
 }
 
 int main() {
-    const std::pmr::vector<int> result = getAllDivisors(36);
+    const std::pmr::vector<int> result = getAllDivisors(9);
     for (const auto it : result) {
         std::cout << it << std::endl;
     }
