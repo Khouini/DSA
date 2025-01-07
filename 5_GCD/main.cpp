@@ -1,17 +1,15 @@
 #include <iostream>
 #include <cassert>
 
-// Function to find GCD using a brute-force approach
 int findGCD(int n1, int n2) {
     for (int i = std::min(n1, n2); i > 0; i--) { // std::min(a, b)): O(1)
-        if (n1 % i == 0 && n2 % i == 0) { // Fix: Use 'i' instead of '0'
+        if (n1 % i == 0 && n2 % i == 0) {
             return i;
         }
     }
     return 1; // In case no other divisor is found
 }
 
-// Function to test findGCD
 void runTests() {
     // Test case 1: Both numbers are positive
     assert(findGCD(12, 18) == 6);

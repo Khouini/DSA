@@ -1,0 +1,3 @@
+C:/Users/khoui/CLionProjects/DSA/6_Sum_of_first_n_numbers/cmake-build-debug/CMakeFiles/6_Sum_of_first_n_numbers.dir
+C:/Users/khoui/CLionProjects/DSA/6_Sum_of_first_n_numbers/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/khoui/CLionProjects/DSA/6_Sum_of_first_n_numbers/cmake-build-debug/CMakeFiles/rebuild_cache.dir
