@@ -4,7 +4,7 @@
 
 #include "main.h"
 
-void displayArray(const int* array, const int size) {
+void displayArray(const int *array, const int size) {
     for (int i = 0; i < size; ++i) {
         std::cout << array[i] << " ";
     }
@@ -12,19 +12,19 @@ void displayArray(const int* array, const int size) {
 }
 
 
-int* subArrayMethod(const int size, const int* inputArray) {
-    int* resultArray = new int[size];
+int *subArrayMethod(const int size, const int *inputArray) {
+    int *resultArray = new int[size];
 
-    for (int i = size -1 ; i>=0; i--) {
+    for (int i = size - 1; i >= 0; i--) {
         resultArray[size - i - 1] = inputArray[i];
     }
     return resultArray;
 }
 
-const int* optimisedMethod1(const int size, int* inputArray) {
-    for (int i = 0 ; i<size / 2; i++) {
-        int* p1 = &inputArray[i];
-        int* p2 = &inputArray[size - i - 1];
+const int *optimisedMethod1(const int size, int *inputArray) {
+    for (int i = 0; i < size / 2; i++) {
+        int *p1 = &inputArray[i];
+        int *p2 = &inputArray[size - i - 1];
         const int temp = *p2;
 
         // swapping
@@ -34,19 +34,19 @@ const int* optimisedMethod1(const int size, int* inputArray) {
     return inputArray;
 }
 
-const int* optimisedMethod2(const int size, int* inputArray) {
+const int *optimisedMethod2(const int size, int *inputArray) {
     for (int i = 0; i < size / 2; i++) {
         ranges::swap(inputArray[i], inputArray[size - i - 1]);
     }
     return inputArray;
 }
 
-const int* recursiveWay(int* inputArray, const int leftP, const int rightP) {
-   if (rightP < leftP) {
-       return inputArray;
-   }
+const int *recursiveWay(int *inputArray, const int leftP, const int rightP) {
+    if (rightP < leftP) {
+        return inputArray;
+    }
     ranges::swap(inputArray[leftP], inputArray[rightP]);
-    return recursiveWay(inputArray, leftP+1, rightP - 1);
+    return recursiveWay(inputArray, leftP + 1, rightP - 1);
 }
 
 
@@ -55,7 +55,7 @@ int main() {
     constexpr int size = 4;
     // const int *resultArray = subArrayMethod(size, inputArray);
     // const int *resultArray = optimisedMethod2(size, inputArray);
-   const int *resultArray= recursiveWay(inputArray, 0, size - 1);
+    const int *resultArray = recursiveWay(inputArray, 0, size - 1);
     // Print the result array
     displayArray(resultArray, size);
 
