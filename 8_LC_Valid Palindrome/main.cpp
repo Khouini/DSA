@@ -6,8 +6,23 @@
 
 #include <iostream>
 
+int cleanString(char *inputString) {
+    int writeIndex = 0, count = 0;
+
+    for (int readIndex = 0; inputString[readIndex] != '\0'; ++readIndex) {
+        if (std::isalnum(inputString[readIndex])) {
+            // Check if alphanumeric
+            inputString[writeIndex++] = std::tolower(inputString[readIndex]); // Convert to lowercase
+            count++;
+        }
+    }
+
+    inputString[writeIndex] = '\0'; // Null-terminate
+    return count;
+}
+
 // iterative way
-bool iterativeWay(const char *inputString, const int size) {
+bool iterativeWay(char *inputString, const int size) {
     for (int i = 0; i < size / 2; i++) {
         const int leftP = i;
         const int rightP = size - i - 1;
@@ -20,7 +35,7 @@ bool iterativeWay(const char *inputString, const int size) {
     return true;
 }
 
-bool recursiveWay(const char *inputString, const int leftP, const int rightP) {
+bool recursiveWay(char *inputString, const int leftP, const int rightP) {
     if (rightP < leftP) {
         return true;
     }
@@ -33,9 +48,10 @@ bool recursiveWay(const char *inputString, const int leftP, const int rightP) {
 }
 
 int main() {
-    constexpr char inputString[] = "3223";
-    // bool valid = iterativeWay(inputString, 4);
-    bool valid = recursiveWay(inputString, 0, 3);
+    char inputString[] = "A man, a plan, a canal: Panama";
+    const int length = cleanString(inputString);
+    // bool valid = iterativeWay(inputString, length);
+    const bool valid = recursiveWay(inputString, 0, length - 1);
     std::cout << "valid: " << valid;
     return 0;
 }
