@@ -1,0 +1,3 @@
+/home/khouini/CLionProjects/DSA/8_LC_Valid Palindrome/cmake-build-debug/CMakeFiles/8_LC_Valid_Palindrome.dir
+/home/khouini/CLionProjects/DSA/8_LC_Valid Palindrome/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/khouini/CLionProjects/DSA/8_LC_Valid Palindrome/cmake-build-debug/CMakeFiles/rebuild_cache.dir
