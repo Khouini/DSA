@@ -1,0 +1,37 @@
+# Ignore build directory (usually cmake-build-*)
+cmake-build-*/
+CMakeLists.txt
+# Ignore user-specific CMake files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# Ignore executables and object files
+*.o
+*.obj
+*.so
+*.exe
+*.dll
+*.out
+*.a
+*.lib
+
+# Ignore logs and crash dumps
+*.log
+core.*
+
+# Ignore generated files
+*.d
+
+# Optional: ignore CLion logs and system data
+.clion*
+
+# Optional: ignore custom build directories (if you have more)
+build/
+out/
+
+# Optional: ignore OS-specific files
+.DS_Store
+Thumbs.db
