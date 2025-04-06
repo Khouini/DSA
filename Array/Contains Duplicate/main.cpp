@@ -2,12 +2,14 @@
 #include <vector>
 #include <unordered_set>
 using namespace std;
+
 class Solution {
 public:
-    bool containsDuplicate(vector<int>& nums) {
+    bool containsDuplicate(vector<int> &nums) {
         unordered_set<int> track;
-        for (int num : nums) {
-            if (track.contains(num)) { //o(1)
+        for (int num: nums) {
+            if (track.contains(num)) {
+                //o(1)
                 return true;
             }
             track.insert(num); // o(1)
