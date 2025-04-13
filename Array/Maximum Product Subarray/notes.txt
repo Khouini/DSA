@@ -1,0 +1,105 @@
+Why looping in both directions (left to right and right to left) is helpful for the maximum product subarray problem, with examples for each key point.
+
+## Why Both Directions Matter
+
+The max product subarray problem is trickier than the max sum subarray problem because of how multiplication behaves with negative numbers and zeros. Let's look at specific examples for each case:
+
+### Example 1: Negative numbers flip the product sign
+
+Consider the array: `[2, 3, -2, 4]`
+
+#### Left to right:
+- Start with product = 1
+- At 2: product = 2, max = 2
+- At 3: product = 6, max = 6
+- At -2: product = -12, max = 6 (stays 6)
+- At 4: product = -48, max = 6 (stays 6)
+
+#### Right to left:
+- Start with product = 1
+- At 4: product = 4, max = 4
+- At -2: product = -8, max = 4 (stays 4)
+- At 3: product = -24, max = 4 (stays 4)
+- At 2: product = -48, max = 4 (stays 4)
+
+Final max = 6 (from left-to-right scan)
+
+Here, the optimal solution is [2,3] with product 6, which the left-to-right scan finds.
+
+### Example 2: Two negatives can make a big positive
+
+Consider array: `[2, -5, -3, 4]`
+
+#### Left to right:
+- Start with product = 1
+- At 2: product = 2, max = 2
+- At -5: product = -10, max = 2 (stays 2)
+- At -3: product = 30, max = 30
+- At 4: product = 120, max = 120
+
+#### Right to left:
+- Start with product = 1
+- At 4: product = 4, max = 4
+- At -3: product = -12, max = 4 (stays 4)
+- At -5: product = 60, max = 60
+- At 2: product = 120, max = 120
+
+Final max = 120 (both directions find it)
+
+In this example, both scans find the optimal solution (the whole array), which has two negative numbers making the product positive.
+
+### Example 3: Zeros reset the product
+
+Consider array: `[2, 0, -3, 4]`
+
+#### Left to right:
+- Start with product = 1
+- At 2: product = 2, max = 2
+- At 0: product = 0, max = 2 (reset product to 1)
+- At -3: product = -3, max = 2 (stays 2)
+- At 4: product = -12, max = 2 (stays 2)
+
+#### Right to left:
+- Start with product = 1
+- At 4: product = 4, max = 4
+- At -3: product = -12, max = 4 (stays 4)
+- At 0: product = 0, max = 4 (reset product to 1)
+- At 2: product = 2, max = 4 (stays 4)
+
+Final max = 4 (from right-to-left scan)
+
+Here, the optimal solution is [4] with product 4, which only the right-to-left scan finds.
+
+### Critical Example: When only one direction works
+
+Consider array: `[-2, -3, 0, 4]`
+
+#### Left to right:
+- Start with product = 1
+- At -2: product = -2, max = 1 (stays 1)
+- At -3: product = 6, max = 6
+- At 0: product = 0, max = 6 (reset product)
+- At 4: product = 4, max = 6 (stays 6)
+
+#### Right to left:
+- Start with product = 1
+- At 4: product = 4, max = 4
+- At 0: product = 0, max = 4 (reset product)
+- At -3: product = -3, max = 4 (stays 4)
+- At -2: product = 6, max = 6
+
+Final max = 6 (both directions find it)
+
+In this case, the optimal subarray is [-2, -3] with product 6, which both scans can find.
+
+## Why This Works
+
+The key insight is that scanning in one direction might miss the optimal solution if:
+1. There are an odd number of negative numbers
+2. There are zeros breaking up the array
+
+By scanning in both directions, we ensure we capture all possible subarrays, including those that might be "trapped" between negative numbers or zeros when scanning in just one direction.
+
+When scanning from left to right, we might "trap" a large product in a negative value, but scanning from right to left gives us another chance to find it.
+
+This dual-scan approach ensures we find the maximum product regardless of how negative numbers and zeros are arranged in the array.
